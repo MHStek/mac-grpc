@@ -12,7 +12,7 @@ import {
   CRow,
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
-import { cilLockLocked, cilUser } from '@coreui/icons'
+import { cilLockLocked, cilMobile, cilUser } from '@coreui/icons'
 
 const Register = () => {
   return (
@@ -25,16 +25,26 @@ const Register = () => {
                 <CForm>
                   <h1>Register</h1>
                   <p className="text-medium-emphasis">Create your account</p>
-                  <CInputGroup className="mb-3">
-                    <CInputGroupText>
-                      <CIcon icon={cilUser} />
-                    </CInputGroupText>
-                    <CFormInput placeholder="Username" autoComplete="username" />
-                  </CInputGroup>
-                  <CInputGroup className="mb-3">
-                    <CInputGroupText>@</CInputGroupText>
-                    <CFormInput placeholder="Email" autoComplete="email" />
-                  </CInputGroup>
+
+                  <CContainer>
+                    <CRow className="mb-3">
+                      <CCol>
+                        <CFormInput
+                          type="text"
+                          label="First Name"
+                          placeholder="Enter your first name"
+                        />
+                      </CCol>
+                      <CCol>
+                        <CFormInput
+                          type="text"
+                          label="Last Name"
+                          placeholder="Enter your last name"
+                        />
+                      </CCol>
+                    </CRow>
+                  </CContainer>
+
                   <CInputGroup className="mb-3">
                     <CInputGroupText>
                       <CIcon icon={cilLockLocked} />
@@ -54,6 +64,12 @@ const Register = () => {
                       placeholder="Repeat password"
                       autoComplete="new-password"
                     />
+                  </CInputGroup>
+                  <CInputGroup className="mb-4">
+                    <CInputGroupText>
+                      <CIcon icon={cilMobile} />
+                    </CInputGroupText>
+                    <CFormInput type="text" placeholder="mobile number" />
                   </CInputGroup>
                   <div className="d-grid">
                     <CButton color="success">Create Account</CButton>

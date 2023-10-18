@@ -23,13 +23,15 @@ const AppHeader = () => {
   const sidebarShow = useSelector((state) => state.sidebarShow)
   const customerInfo = useSelector((state) => state.customerInfo)
 
+  const handleSidebarShow = (params) => {
+    //Show or hide the sidebar
+    dispatch({ type: 'set', sidebarShow: !sidebarShow })
+  }
+
   return (
     <CHeader position="sticky" className="mb-4">
       <CContainer fluid>
-        <CHeaderToggler
-          className="ps-1"
-          onClick={() => dispatch({ type: 'set', sidebarShow: !sidebarShow })}
-        >
+        <CHeaderToggler className="ps-1" onClick={handleSidebarShow}>
           <CIcon icon={cilMenu} size="lg" />
         </CHeaderToggler>
         <CHeaderBrand className="mx-auto d-md-none" to="/">

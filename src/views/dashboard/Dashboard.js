@@ -1,4 +1,5 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 import {
   CAvatar,
@@ -177,9 +178,11 @@ const Dashboard = () => {
       activity: 'Last week',
     },
   ]
+  const customerInfo = useSelector((state) => state.customerInfo)
 
   return (
     <>
+      <h2>{customerInfo.businessname}</h2>
       <WidgetsDropdown />
       <CCard className="mb-4">
         <CCardBody>
